@@ -1,0 +1,1 @@
+"""Deribit Storage - Cryptocurrency price tracking and API service."""
