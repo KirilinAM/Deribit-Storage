@@ -80,7 +80,6 @@ deribit-storage/
 │   ├── worker/                # Celery worker
 │   │   ├── tasks.py           # Celery tasks
 │   │   ├── deribit_client.py  # Deribit API client
-│   │   └── models.py          # SQLAlchemy models
 │   ├── core/                  # Shared core functionality
 │   │   ├── config.py          # Configuration
 │   │   ├── database/
