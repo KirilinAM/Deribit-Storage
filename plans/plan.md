@@ -4,7 +4,7 @@
         - [x] Project structure with src/ and tests/ layouts
         - [x] Dependency management with pyproject.toml
         - [x] Basic configuration with Pydantic Settings
-        - [ ] **pytest configuration with coverage reporting**
+        - [x] **pytest configuration with coverage reporting**
         - [ ] **pytest-mock, pytest-asyncio, factory-boy setup**
         - [ ] **Test fixtures structure (conftest.py)**
         - [ ] **GitHub Actions workflow (CI): test on every push**
