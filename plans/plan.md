@@ -1,0 +1,98 @@
+- [ ] Phase 1: Foundation & CI/CD Pipeline
+    - [ ] Project Setup with TDD Infrastructure
+        - [x] Python virtual environment
+        - [ ] Project structure with src/ and tests/ layouts
+        - [ ] Dependency management with pyproject.toml
+        - [ ] Basic configuration with Pydantic Settings
+        - [ ] **pytest configuration with coverage reporting**
+        - [ ] **pytest-mock, pytest-asyncio, factory-boy setup**
+        - [ ] **Test fixtures structure (conftest.py)**
+        - [ ] **GitHub Actions workflow (CI): test on every push**
+    - [ ] Database Design (Test-First)
+        - [ ] **Write failing tests for database models**
+        - [ ] PostgreSQL schema with price_history table
+        - [ ] SQLAlchemy models with async support
+        - [ ] Alembic migrations setup
+        - [ ] Connection pooling configuration
+        - [ ] **Write tests for database CRUD operations**
+        - [ ] **Testcontainers for database integration tests in CI**
+
+- [ ] Phase 2: Core Services with TDD
+    - [ ] Deribit Client (Test-Driven)
+        - [ ] **Write failing unit tests for client interface**
+        - [ ] aiohttp client for Deribit API
+        - [ ] Error handling and retry logic
+        - [ ] Concurrent price fetching
+        - [ ] **Mock responses in tests (pytest-mock)**
+        - [ ] **Integration tests with Deribit testnet**
+        - [ ] **Coverage threshold: >90%**
+    - [ ] Celery Worker (Test-Driven)
+        - [ ] **Write failing tests for periodic tasks**
+        - [ ] **Configure Celery with Redis for testing**
+        - [ ] Periodic task scheduling (every minute)
+        - [ ] Integration with Deribit client
+        - [ ] Database storage of prices
+        - [ ] Error recovery and alerting
+        - [ ] **Write tests for error scenarios**
+    - [ ] FastAPI Service (Test-Driven)
+        - [ ] **Write API contract tests first**
+        - [ ] REST endpoints with OpenAPI docs
+        - [ ] Client authentication middleware
+        - [ ] Rate limiting implementation
+        - [ ] Health check endpoints
+        - [ ] **Test client fixtures for API testing**
+        - [ ] **Test authentication and rate limiting**
+
+- [ ] Phase 3: Production Features with CI/CD Expansion
+    - [ ] Monitoring & Logging
+        - [ ] Structured JSON logging
+        - [ ] **Test log output format**
+        - [ ] Application metrics (Prometheus)
+        - [ ] **Health check integration tests**
+        - [ ] Error tracking (Sentry)
+    - [ ] Containerization & CI/CD Integration
+        - [ ] Dockerfiles for API and Worker
+        - [ ] Docker Compose for local development
+        - [ ] Environment configuration
+        - [ ] **Multi-stage builds for smaller images**
+        - [ ] **GitHub Actions workflow (CD): build and push images**
+        - [ ] **Image scanning for vulnerabilities**
+        - [ ] **Docker Compose tests in CI**
+    - [ ] Comprehensive Testing Suite
+        - [ ] **Unit tests with >90% coverage**
+        - [ ] **Integration tests with test database**
+        - [ ] **API endpoint tests (end-to-end)**
+        - [ ] **Worker task tests with in-memory broker**
+        - [ ] **Performance tests (locust/k6)**
+        - [ ] **Security tests (bandit, safety)**
+
+- [ ] Phase 4: Deployment & Final Validation
+    - [ ] CI/CD Pipeline Completion
+        - [ ] **GitHub Actions workflow stages:**
+            - [ ] **Lint & Type check (ruff, mypy)**
+            - [ ] **Unit tests (with coverage)**
+            - [ ] **Integration tests (with testcontainers)**
+            - [ ] **Build Docker images**
+            - [ ] **Push to container registry**
+            - [ ] **Deploy to staging environment**
+            - [ ] **Run smoke tests on staging**
+            - [ ] **Manual approval for production**
+            - [ ] **Deploy to production**
+        - [ ] **Test data seeding for staging**
+        - [ ] **Rollback strategy implementation**
+    - [ ] Documentation
+        - [ ] API documentation with Swagger UI
+        - [ ] README with setup instructions
+        - [ ] **TDD/Testing strategy documentation**
+        - [ ] **CI/CD pipeline documentation**
+        - [ ] Design decisions section
+        - [ ] Deployment guide
+        - [ ] **Local development with Docker Compose guide**
+    - [ ] Final Integration & Validation
+        - [ ] **End-to-end tests in staging environment**
+        - [ ] **Load testing and benchmarking**
+        - [ ] **Security audit with automated tools**
+        - [ ] **Test coverage report review**
+        - [ ] **Monitoring dashboard validation**
+        - [ ] **Production deployment with blue-green strategy**
+        - [ ] **Post-deployment smoke tests**

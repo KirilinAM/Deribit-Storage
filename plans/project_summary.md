@@ -19,13 +19,13 @@ A Python-based microservices application that:
 ### Technology Stack
 - **Backend**: Python 3.11+, FastAPI, SQLAlchemy 2.0, Pydantic
 - **Task Queue**: Celery with Redis broker
-- **HTTP Client**: aiohttp for async Deribit API calls
+- **HTTP Client**: aiohttp 
 - **Database**: PostgreSQL 15 with asyncpg driver
 - **Containerization**: Docker & Docker Compose
 - **CI/CD**: GitHub Actions
 - **Authentication**: Client Credentials (Client ID + Secret)
 - **Logging**: Structured JSON logging with structlog
-- **Testing**: pytest with async support
+- **Testing**: pytest with async support, pytest-cov for code coverage, pytest-mock
 
 ## Key Design Decisions
 
@@ -69,78 +69,6 @@ A Python-based microservices application that:
 - Suitable for programmatic access
 - Can be extended to JWT if needed
 
-## Implementation Plan
-
-### Phase 1: Foundation 
-1. **Project Setup**
-   - Python virtual environment
-   - Project structure with src/ layout
-   - Dependency management with pyproject.toml
-   - Basic configuration with Pydantic Settings
-
-2. **Database Design**
-   - PostgreSQL schema with price_history table
-   - SQLAlchemy models with async support
-   - Alembic migrations setup
-   - Connection pooling configuration
-
-### Phase 2: Core Services 
-1. **Deribit Client**
-   - aiohttp client for Deribit API
-   - Error handling and retry logic
-   - Concurrent price fetching
-   - Unit tests with mocked responses
-
-2. **Celery Worker**
-   - Periodic task scheduling (every minute)
-   - Integration with Deribit client
-   - Database storage of prices
-   - Error recovery and alerting
-
-3. **FastAPI Service**
-   - REST endpoints with OpenAPI docs
-   - Client authentication middleware
-   - Rate limiting implementation
-   - Health check endpoints
-
-### Phase 3: Production Features 
-1. **Monitoring & Logging**
-   - Structured JSON logging
-   - Application metrics
-   - Health check integration
-   - Error tracking
-
-2. **Containerization**
-   - Dockerfiles for API and Worker
-   - Docker Compose for local development
-   - Environment configuration
-   - Volume management for data persistence
-
-3. **Testing Suite**
-   - Unit tests for all components
-   - Integration tests with test database
-   - API endpoint tests
-   - Worker task tests
-
-### Phase 4: Deployment 
-1. **CI/CD Pipeline**
-   - GitHub Actions workflow
-   - Automated testing on push
-   - Docker image building
-   - Deployment automation
-
-2. **Documentation**
-   - API documentation with Swagger UI
-   - README with setup instructions
-   - Design decisions section
-   - Deployment guide
-
-3. **Final Integration**
-   - End-to-end testing
-   - Performance benchmarking
-   - Security audit
-   - Production deployment
-
 ## File Structure
 ```
 deribit-storage/
@@ -148,8 +76,6 @@ deribit-storage/
 │   ├── api/                    # FastAPI application
 │   │   ├── main.py            # FastAPI app instance
 │   │   ├── routers/           # API endpoints
-│   │   ├── dependencies/      # FastAPI dependencies
-│   │   ├── middleware/        # Custom middleware
 │   │   └── schemas/          # Pydantic models
 │   ├── worker/                # Celery worker
 │   │   ├── tasks.py           # Celery tasks
@@ -157,13 +83,14 @@ deribit-storage/
 │   │   └── models.py          # SQLAlchemy models
 │   ├── core/                  # Shared core functionality
 │   │   ├── config.py          # Configuration
-│   │   ├── database.py        # Database connection
+│   │   ├── database/
+│   │   │   ├── connections.py        # Database connection
+│   │   │   ├── models.py        # Database models
+│   │   │   └── actions.py        # Database actions
 │   │   ├── logging.py         # Logging setup
-│   │   └── security.py        # Security utilities
-│   └── tests/                 # Test suite
+├── tests/                 # Test suite
 ├── docker/                    # Docker configuration
 ├── .github/workflows/        # GitHub Actions
-├── requirements/              # Python dependencies
 ├── migrations/               # Database migrations
 ├── .env.example              # Environment template
 ├── docker-compose.yml        # Local development
@@ -244,9 +171,3 @@ All endpoints require `X-Client-ID` and `X-Client-Secret` headers.
 4. **Data Loss**: Regular backups and replication
 5. **Security Breach**: Authentication, rate limiting, input validation
 
-## Next Steps
-1. Review and approve the architecture plan
-2. Begin implementation with Phase 1
-3. Set up development environment
-4. Create initial code structure
-5. Implement core database models
