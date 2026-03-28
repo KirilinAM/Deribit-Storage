@@ -1,1 +1,0 @@
-"""Celery worker for Deribit price fetching."""
