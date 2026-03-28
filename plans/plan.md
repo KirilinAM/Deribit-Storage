@@ -5,8 +5,8 @@
         - [x] Dependency management with pyproject.toml
         - [x] Basic configuration with Pydantic Settings
         - [x] **pytest configuration with coverage reporting**
-        - [ ] **pytest-mock, pytest-asyncio, factory-boy setup**
-        - [ ] **Test fixtures structure (conftest.py)**
+        - [x] **pytest-mock, pytest-asyncio, factory-boy setup**
+        - [x] **Test fixtures structure (conftest.py)**
         - [ ] **GitHub Actions workflow (CI): test on every push**
     - [ ] Database Design (Test-First)
         - [ ] **Write failing tests for database models**
