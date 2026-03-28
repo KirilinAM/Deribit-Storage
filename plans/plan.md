@@ -1,9 +1,9 @@
 - [ ] Phase 1: Foundation & CI/CD Pipeline
     - [ ] Project Setup with TDD Infrastructure
         - [x] Python virtual environment
-        - [ ] Project structure with src/ and tests/ layouts
-        - [ ] Dependency management with pyproject.toml
-        - [ ] Basic configuration with Pydantic Settings
+        - [x] Project structure with src/ and tests/ layouts
+        - [x] Dependency management with pyproject.toml
+        - [x] Basic configuration with Pydantic Settings
         - [ ] **pytest configuration with coverage reporting**
         - [ ] **pytest-mock, pytest-asyncio, factory-boy setup**
         - [ ] **Test fixtures structure (conftest.py)**
