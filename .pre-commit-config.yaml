@@ -38,3 +38,10 @@ repos:
         types: [python]
         args: [--config-file=pyproject.toml, src]
         pass_filenames: false
+      - id: pytest
+        name: pytest (unit tests)
+        entry: python -m pytest --no-cov
+        language: system
+        types: [python]
+        pass_filenames: false
+        always_run: true
