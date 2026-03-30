@@ -19,7 +19,7 @@ A Python-based microservices application that:
 ### Technology Stack
 - **Backend**: Python 3.11+, FastAPI, SQLAlchemy 2.0, Pydantic
 - **Task Queue**: Celery with Redis broker
-- **HTTP Client**: aiohttp 
+- **HTTP Client**: aiohttp
 - **Database**: PostgreSQL 15 with asyncpg driver
 - **Containerization**: Docker & Docker Compose
 - **CI/CD**: GitHub Actions
@@ -169,4 +169,3 @@ All endpoints require `X-Client-ID` and `X-Client-Secret` headers.
 3. **Service Outage**: Health checks and automatic restart
 4. **Data Loss**: Regular backups and replication
 5. **Security Breach**: Authentication, rate limiting, input validation
-

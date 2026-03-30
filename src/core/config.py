@@ -23,8 +23,12 @@ class Settings(BaseSettings):
         description="PostgreSQL connection string.",
         examples=["postgresql+asyncpg://user:password@host:5432/db"],
     )
-    database_pool_size: int = Field(default=10, ge=1, description="Connection pool size.")
-    database_max_overflow: int = Field(default=20, ge=0, description="Max overflow connections.")
+    database_pool_size: int = Field(
+        default=10, ge=1, description="Connection pool size."
+    )
+    database_max_overflow: int = Field(
+        default=20, ge=0, description="Max overflow connections."
+    )
     database_echo: bool = Field(default=False, description="Echo SQL statements.")
 
     # Authentication

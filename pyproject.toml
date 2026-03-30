@@ -22,32 +22,32 @@ dependencies = [
     # FastAPI
     "fastapi>=0.104.0",
     "uvicorn[standard]>=0.24.0",
-    
+
     # Database
     "sqlalchemy>=2.0.0",
     "asyncpg>=0.29.0",
     "alembic>=1.12.0",
-    
+
     # Pydantic
     "pydantic>=2.5.0",
     "pydantic-settings>=2.1.0",
-    
+
     # Celery
     "celery>=5.3.0",
     "redis>=5.0.0",
-    
+
     # HTTP Client
     "aiohttp>=3.9.0",
-    
+
     # Retry logic
     "tenacity>=8.2.0",
-    
+
     # Logging
     "structlog>=23.0.0",
-    
+
     # Rate limiting
     "slowapi>=0.1.8",
-    
+
     # Security
     "python-multipart>=0.0.6",
 ]
@@ -122,7 +122,7 @@ ignore = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src"]  
+pythonpath = ["src"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
