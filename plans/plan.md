@@ -7,9 +7,9 @@
         - [x] **pytest configuration with coverage reporting**
         - [x] **pytest-mock, pytest-asyncio, factory-boy setup**
         - [x] **Test fixtures structure (conftest.py)**
-        - [ ] **GitHub Actions workflow (CI): test on every push**
+        - [x] **GitHub Actions workflow (CI): test on every push**
     - [ ] Database Design (Test-First)
-        - [ ] **Write failing tests for database models**
+        - [x] **Write failing tests for database models**
         - [ ] PostgreSQL schema with price_history table
         - [ ] SQLAlchemy models with async support
         - [ ] Alembic migrations setup
